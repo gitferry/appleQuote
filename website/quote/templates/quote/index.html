@@ -1,0 +1,9 @@
+{% if latest_quotes_list %}
+    <ul>
+    {% for quote in latest_quotes_list %}
+        <li><a href="/quote/{{ quote.id }}/">{{ quote.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No quotes are available.</p>
+{% endif %}

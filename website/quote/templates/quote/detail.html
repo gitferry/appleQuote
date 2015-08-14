@@ -1,0 +1,8 @@
+<h1>{{ quote.title }}</h1>
+<h1>{{ quote.pub_date }}</h1>
+
+<ul>
+{% for url in quote.image_set.all %}
+    <li>{{ url.url }}</li>
+{% endfor %}
+</ul>
