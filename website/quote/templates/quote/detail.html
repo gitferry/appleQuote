@@ -3,6 +3,6 @@
 
 <ul>
 {% for url in quote.image_set.all %}
-    <li>{{ url.url }}</li>
+    <p><img src="{{ url.url }}"></p>
 {% endfor %}
 </ul>
