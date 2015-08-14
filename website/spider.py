@@ -34,12 +34,13 @@ def apple_spider(max_pages, index_url):
 
 			print link.string
 
-			date_string = ''.join(re.findall(r'[\u4e00-\u9fa5]{1}', topic_title))
+			date_string = '-'.join(re.findall(r'[0-9]+', topic_title)[:3])
+			print date_string
 			if not date_string:
 				continue
 
 			try:
-				topic_date = datetime.datetime.strptime(date_string, '%Y%m%d').date()
+				topic_date = datetime.datetime.strptime(date_string, '%Y-%m-%d').date()
 			except:
 				pass
 
