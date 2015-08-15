@@ -44,13 +44,16 @@ def apple_spider(max_pages, index_url):
 			except:
 				pass
 
-			quote = Quote(title = topic_title, pub_date = topic_date)
-			quote.save()
+			quote, created = Quote.objects.get_or_create(title = topic_title, pub_date = topic_date)
+
+			if not created:
+				print 'The spider is finished, the quotes list is latest. :)'
+				return
 
 			images_list = get_single_quote_list(topic_url)
 
 			for url in images_list:
-				quote.image_set.create(url=url)
+				quote.image_set.create(url = url)
 
 
 		page_index += 1
