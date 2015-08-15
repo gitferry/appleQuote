@@ -44,7 +44,9 @@ def apple_spider(max_pages, index_url):
 			except:
 				pass
 
-			quote, created = Quote.objects.get_or_create(title = topic_title, pub_date = topic_date)
+			quote, created = Quote.objects.get_or_create(pub_date = topic_date)
+			quote.title = topic_title
+			quote.save()
 
 			if not created:
 				print 'The spider is finished, the quotes list is latest. :)'
