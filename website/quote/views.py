@@ -6,7 +6,7 @@ from .serializers import QuoteSerializer, ImageSerializer
 from rest_framework import viewsets
 
 def index(request):
-    latest_quotes_list = Quote.objects.order_by('-pub_date')
+    latest_quotes_list = Quote.objects.order_by('-pub_date')[:10]
     context = {'latest_quotes_list': latest_quotes_list}
 
     return render(request, 'quote/index.html', context)
