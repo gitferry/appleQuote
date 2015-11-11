@@ -21,7 +21,7 @@ def apple_spider(max_pages, index_url):
     apple_quote_collection = []
 
     while page_index <= max_pages:
-        url = index_url + 'go/dailyprice?p=' + str(page_index)
+        url = index_url + '/go/dailyprice?p=' + str(page_index)
         html_text = requests.get(url).text
 
         soup = BeautifulSoup(html_text)
@@ -32,6 +32,7 @@ def apple_spider(max_pages, index_url):
             topic_url = index_url + link.get('href')
             topic_title = link.string
 
+            print topic_url
             print link.string
 
             date_string = '-'.join(re.findall(r'[0-9]+', topic_title)[:3])
@@ -88,5 +89,5 @@ def write_to_db(collection):
 
 if __name__ == '__main__':
     max_pages = 10
-    index_url = 'http://www.appletuan.com/'
+    index_url = 'http://www.appletuan.com'
     apple_spider(max_pages, index_url)
