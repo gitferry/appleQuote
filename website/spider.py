@@ -33,7 +33,7 @@ def apple_spider(max_pages, index_url):
             topic_title = link.string
 
             print topic_url
-            print link.string
+            # print link.string
 
             date_string = '-'.join(re.findall(r'[0-9]+', topic_title)[:3])
             print date_string
