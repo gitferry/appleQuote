@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>{% block title %}{% endblock %} -- 苹果每日报价</title>
+    <title> Daily Price </title>
     {% load staticfiles %}
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'todc-bootstrap/css/bootstrap.min.css' %}" />
@@ -36,7 +36,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Daily Price</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -49,19 +49,14 @@
 
     <div class="container">
         <div class="row">
-      <div class="col-lg-9">
         {% block content %}{% endblock %}
-      </div>
-      <div class="col-lg-3">
-        {% block rightside %}{% endblock %}
-      </div>
     </div>
     </div><!--/.container-->
 
 
     <div id="footer">
         <div class="container">
-             <p class="text-muted">DJBlog 2014</p>
+             <p class="text-muted">Daily Price 2015</p>
         </div>
     </div>
 
