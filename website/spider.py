@@ -49,7 +49,7 @@ def apple_spider(max_pages, index_url):
             quote.title = topic_title
             quote.save()
 
-            if not created:
+            if not created and date_string != "6-16-3980" and date_string != "6":
                 print 'The spider is finished, the quotes list is latest. :)'
                 return
 
