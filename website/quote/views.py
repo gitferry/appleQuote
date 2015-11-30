@@ -15,6 +15,10 @@ def detail(request, quote_id):
     quote = get_object_or_404(Quote, pk=quote_id)
     return render(request, 'quote/detail.html', {'quote': quote})
 
+def about(request):
+
+    return render(request, 'quote/about.html')
+
 class QuoteViewSet(viewsets.ModelViewSet):
     """
     API endpoint that show all the quotes ordered by date.
